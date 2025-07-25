@@ -1,3 +1,5 @@
+kubectl create cm mycm1 --from-file=myconfig.init
+
 apiVersion: v1
 kind: Pod
 metadata:
