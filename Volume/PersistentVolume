@@ -10,3 +10,6 @@ spec:
     - ReadWriteMany
   hostPath:
     path: /opt
+
+
+kubectl apply -f pv.yaml
