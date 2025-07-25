@@ -1,3 +1,6 @@
+ kubectl create cm mycm --from-literal=dbhost=192.168.0.6 --from-literal=dbport=8080
+
+
 apiVersion: v1
 kind: Pod
 metadata:
