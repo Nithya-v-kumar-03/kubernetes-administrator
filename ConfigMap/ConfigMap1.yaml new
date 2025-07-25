@@ -17,7 +17,7 @@ spec:
         mountPath: /etc/lala
   dnsPolicy: ClusterFirst
   restartPolicy: Always
-   volumes:
+  volumes:
   - name: myvol
     configMap:
       name: mycm1
