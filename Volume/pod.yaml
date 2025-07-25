@@ -1,21 +1,35 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: firstpod
+  creationTimestamp: null
   labels:
     run: firstpod
+  name: firstpod
+  namespace: myns
 spec:
   containers:
-  - name: firstpod
-    image: nithya890/first:1.0
+  - image: nithya890/first:1.0
+    name: firstpod
     ports:
     - containerPort: 8080
     volumeMounts:
-    - name: data
-      mountPath: /data
-  volumes:
-  - name: data
-    persistentVolumeClaim:
-      claimName: my-pvc
+      - name: myvol
+        mountPath: /etc/lala
+    resources:
+      resources:
+      requests:
+        cpu: 0.1m
+        memory: 300M
+      limits:
+        cpu: 0.2m
+        memory: 400M
   dnsPolicy: ClusterFirst
   restartPolicy: Always
+  volumes:
+   - name: myvol
+     persistentVolumeClaim:
+       claimName: mypvc
+status: {}
+
+kubectl pod.yaml
+ 
