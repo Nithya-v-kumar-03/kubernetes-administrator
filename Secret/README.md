@@ -17,6 +17,8 @@ kubectl create secret docker-registry docker-secret --docker-email=example@gmail
 
 #### TLS Secret
 ```
+docker cp kind-control-plane:/etc/kubernetes/pki/apiserver.crt .
+docker cp kind-control-plane:/etc/kubernetes/pki/apiserver.key .
 kubectl create secret tls my-tls-secret --cert=/root/data/serverca.crt --key=/root/data/servercakey.pem
 ```
 
